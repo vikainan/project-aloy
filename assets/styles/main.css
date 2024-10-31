@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+
+* {
+    font-family: "Quicksand" !important;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    flex-direction: row;
+    text-align: center;
+    height: 100vh;
+}
+
+.card-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    margin-top: 40px;
+    padding: 50px;
+    border: 2px solid lightgray;
+    border-radius: 40px;
+}
+
+.card-2 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    gap: 15px;
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+    padding: 50px;
+    border: 2px solid lightgray;
+    border-radius: 40px;
+}
+
+.card-3 {
+    margin-top: 40px;
+    width: fit-content;
+    height: fit-content;
+    padding: 50px;
+    border: 2px solid lightgray;
+    border-radius: 40px;
+}
+
+.block {
+    display: flex;
+    flex-direction: row;
+}
+.column-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.column-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.shop {
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    min-width: 20rem;
+    margin-top: 40px;
+    min-width: 20rem;
+    padding: 50px;
+    border: 2px solid lightgray;
+    border-radius: 40px;
+}
+
+input,
+select {
+    width: 10rem;
+    height: 2rem;
+    margin-bottom: 16px;
+    text-align: center;
+    font-size: medium;
+    border: none;
+    border-bottom: 2px solid lightgray;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+input:hover,
+select:hover {
+    border-bottom: 2px solid rgb(100, 100, 100);
+}
+
+.stepper {
+    display: flex;
+    margin: 10px;
+    height: 25px;
+    width: 15vh;
+    justify-content: space-between;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    background-color: rgba(127, 127, 127, 0.5);
+}
+
+.stepper span {
+    height: inherit;
+    font-size: 1.5vh;
+    text-align: center;
+    border-radius: 6px;
+    background-color: rgba(127, 127, 127, 0.5);
+}
+
+.stepper button {
+    width: 3vh;
+    height: inherit;
+    font-size: 2vh;
+    text-align: center;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    background-color: rgba(127, 127, 127, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+.stepper button:hover {
+    background-color: rgb(100, 100, 100);
+    border: none;
+    color: white;
+}
+
+.error {
+    max-width: 20rem;
+}
+
+.divider {
+    width: 15rem;
+    border: 2px solid lightgray;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 20px;
+}
