@@ -1,150 +1,289 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
-
-* {
-    font-family: "Quicksand" !important;
+body {
+    background-image: url("/assets/img/background.jpg");
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 130px 75px;
+    gap: 30px;
 }
 
-.container {
+.navbar {
+    /* Navbar */
+
+    /* Auto layout */
     display: flex;
-    justify-content: center;
-    justify-self: center;
     flex-direction: row;
-    text-align: center;
-    height: 100vh;
+    align-items: center;
+    padding: 0px 9px 0px 0px;
+    gap: 35px;
+    isolation: isolate;
+
+    margin: 0 auto;
+
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+}
+
+.cards {
+    /* container */
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+    isolation: isolate;
+
+    margin: 0 auto;
+    width: 1665px;
+    height: 630px;
+
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+
 }
 
 .card-1 {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: fit-content;
-    height: fit-content;
-    margin-top: 40px;
-    padding: 50px;
-    border: 2px solid lightgray;
-    border-radius: 40px;
+    padding: 25px;
+    gap: 20px;
+    width: 41.928721174004195vh;
+    height: 52.41090146750524vh;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(20px);
+    border-radius: 50px;
 }
 
-.card-2 {
+.text-small {
+    width: 250px;
+    height: 25px;
+    flex: none;
+    flex-grow: 0;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(20px);
+    border-radius: 6px;
+    font-family: 'SAO UI';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.input-small {
     display: flex;
     flex-direction: column;
-    margin-top: 40px;
-    gap: 15px;
-    width: fit-content;
-    height: fit-content;
+    justify-content: center;
     align-items: center;
-    padding: 50px;
-    border: 2px solid lightgray;
-    border-radius: 40px;
+    /* padding: 0px 71px; */
+    gap: 10px;
+    isolation: isolate;
+    width: 250px;
+    height: 25px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    flex: none;
+    flex-grow: 0;
+    background: rgba(127, 127, 127, 0.5);
+    border-radius: 6px;
+    font-family: 'SAO UI';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: rgba(255, 255, 255);
+    outline: none;
+    border: none;
 }
 
-.card-3 {
-    margin-top: 40px;
-    width: fit-content;
-    height: fit-content;
-    padding: 50px;
-    border: 2px solid lightgray;
-    border-radius: 40px;
+.input-small::placeholder {
+    color: rgba(255, 255, 255, 0.75);
 }
 
-.block {
+.text-small-spc {
+    width: 250px;
+    height: 25px;
+    flex: none;
+    flex-grow: 0;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(20px);
+    border-radius: 6px;
+    font-family: 'SAO UI';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.dropdown-spc {
+
+    outline: none;
+    border: none;
+    width: 250px;
+    height: 25px;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+    /* Inside auto layout */
+    flex: none;
+    flex-grow: 0;
+
+    background: rgba(127, 127, 127, 0.5);
+    border-radius: 6px;
+
+    /* text */
+    font-family: 'SAO UI';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    /* identical to box height */
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+/* select {
+
+    * styling *
+    background-color: white;
+    border: thin solid blue;
+    border-radius: 4px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.5em 3.5em 0.5em 1em;
+  
+    * reset *
+  
+    margin: 0;      
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  
+  
+  * arrows *
+  
+  select.classic {
+    background-image:
+      linear-gradient(45deg, transparent 50%, red 50%),
+      linear-gradient(135deg, blue 50%, transparent 50%),
+      linear-gradient(to right, orange, green);
+    background-position:
+      calc(100% - 20px) calc(1em + 2px),
+      calc(100% - 15px) calc(1em + 2px),
+      100% 0;
+    background-size:
+      5px 5px,
+      5px 5px,
+      2.5em 2.5em;
+    background-repeat: no-repeat;
+  }
+  
+  select.classsic:focus {
+    background-image:
+      linear-gradient(45deg, white 50%, transparent 50%),
+      linear-gradient(135deg, transparent 50%, white 50%),
+      linear-gradient(to right, gray, gray);
+    background-position:
+      calc(100% - 15px) 1em,
+      calc(100% - 20px) 1em,
+      100% 0;
+    background-size:
+      5px 5px,
+      5px 5px,
+      2.5em 2.5em;
+    background-repeat: no-repeat;
+    border-color: grey;
+    outline: 0;
+  } */
+
+
+.selector {
+
+    /* position: absolute;
+    left: 88%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%; */
     display: flex;
     flex-direction: row;
-}
-.column-1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
 
-.column-2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.shop {
-    display: flex;
-    justify-content: center;
-    justify-self: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    min-width: 20rem;
-    margin-top: 40px;
-    min-width: 20rem;
-    padding: 50px;
-    border: 2px solid lightgray;
-    border-radius: 40px;
-}
-
-input,
-select {
-    width: 10rem;
-    height: 2rem;
-    margin-bottom: 16px;
-    text-align: center;
-    font-size: medium;
-    border: none;
-    border-bottom: 2px solid lightgray;
-    outline: none;
-    transition: all 0.3s ease-in-out;
-}
-
-input:hover,
-select:hover {
-    border-bottom: 2px solid rgb(100, 100, 100);
-}
-
-.stepper {
-    display: flex;
-    margin: 10px;
-    height: 25px;
-    width: 15vh;
-    justify-content: space-between;
-    outline: none;
+    background: rgba(127, 127, 127, 0.5);
     border-radius: 6px;
-    color: white;
-    background-color: rgba(127, 127, 127, 0.5);
 }
 
-.stepper span {
-    height: inherit;
-    font-size: 1.5vh;
-    text-align: center;
-    border-radius: 6px;
-    background-color: rgba(127, 127, 127, 0.5);
+.sq-bottom {
+
+    position: absolute;
+    left: 94.03%;
+    right: 1.97%;
+    top: 27.72%;
+    bottom: 32.28%;
+
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 1px;
+    transform: matrix(-0.71, 0.71, 0.71, 0.71, 0, 0);
+
 }
 
-.stepper button {
-    width: 3vh;
-    height: inherit;
-    font-size: 2vh;
-    text-align: center;
-    outline: none;
-    border: none;
-    border-radius: 6px;
-    color: white;
-    background-color: rgba(127, 127, 127, 0.5);
-    transition: all 0.3s ease-in-out;
+.sq-top {
+
+    position: absolute;
+    left: 94.06%;
+    right: 1.94%;
+    top: 16%;
+    bottom: 44%;
+
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 1px;
+    transform: matrix(-0.71, 0.71, 0.71, 0.71, 0, 0);
 }
 
-.stepper button:hover {
-    background-color: rgb(100, 100, 100);
-    border: none;
-    color: white;
+.block-selector {
+    /* block-selector */
+
+    width: 200px;
+    height: 200px;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+
+    /* Inside auto layout */
+    flex: none;
+    flex-grow: 0;
+
+    /* bg-img */
+
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
 }
 
-.error {
-    max-width: 20rem;
-}
-
-.divider {
-    width: 15rem;
-    border: 2px solid lightgray;
-    margin: auto;
-    margin-top: 10px;
-    border-radius: 20px;
+.block-selector img {
+    width: 120px;
+    height: auto;
 }
