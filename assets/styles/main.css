@@ -20,8 +20,7 @@ body {
     isolation: isolate;
 
     margin: 0 auto;
-
-
+    
     /* Inside auto layout */
     flex: none;
     order: 0;
