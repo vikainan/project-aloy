@@ -214,7 +214,3 @@ function spc() {
 `;
 	}
 }
-
-function selectWeapon() {
-    var weaponSelected = 0;
-}
