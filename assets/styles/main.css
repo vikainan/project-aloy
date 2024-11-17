@@ -6,6 +6,7 @@
 * {
     font-family: aincrad-font;
     box-sizing: border-box;
+    user-select: none;
 }
 
 html {
@@ -14,6 +15,7 @@ html {
 
 body {
     background-image: url("/assets/img/background.jpg");
+    /* background-color: black; */
     margin: 0;
     padding: 0;
     min-height: 100%;
@@ -103,7 +105,7 @@ button {
     justify-content: center;
     align-items: center;
     padding: 2.5vh 1.25vw;
-    gap: 2vh;
+    gap: 4vh;
     width: 20vw;
     height: 50vh;
     background: rgba(255, 255, 255, 0.3);
@@ -114,11 +116,11 @@ button {
 
 .card-2 {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 2.5vh 1.25vw;
-    gap: 2.8vw;
+    gap: 1.75vh;
     width: 20vw;
     height: 50vh;
     background: rgba(255, 255, 255, 0.3);
@@ -129,11 +131,11 @@ button {
 
 .card-3 {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 2.5vh 1.25vw;
-    gap: 1.25vw;
+    gap: 2vh;
     width: 20vw;
     height: 50vh;
     background: rgba(255, 255, 255, 0.3);
@@ -148,7 +150,7 @@ button {
     justify-content: center;
     align-items: center;
     padding: 2.5vh 1.25vw;
-    gap: 0.5vh;
+    gap: 3vh;
     width: 20vw;
     height: 50vh;
     background: rgba(255, 255, 255, 0.3);
@@ -162,7 +164,8 @@ button {
     height: 2.83vh;
     background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(1vw);
-    border-radius: 0.3vw;
+    border-top-right-radius: 0.75vw;
+    border-top-left-radius: 0.75vw;
     font-weight: 700;
     font-size: 1.2vw;
     /* line-height: 37vh; */
@@ -176,7 +179,8 @@ button {
     height: 2.83vh;
     background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(1vw);
-    border-radius: 0.3vw;
+    border-top-right-radius: 0.75vw;
+    border-top-left-radius: 0.75vw;
     font-weight: 700;
     font-size: 1vw;
     line-height: 3.3vh;
@@ -190,7 +194,8 @@ button {
     height: 2.83vh;
     background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(1vw);
-    border-radius: 0.3vw;
+    border-top-right-radius: 0.75vw;
+    border-top-left-radius: 0.75vw;
     font-weight: 700;
     font-size: 1vw;
     line-height: 3.3vh;
@@ -209,7 +214,8 @@ button {
     height: 2.83vh;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     background: rgba(127, 127, 127, 0.5);
-    border-radius: 0.3vw;
+    border-bottom-right-radius: 0.75vw;
+    border-bottom-left-radius: 0.75vw;
     font-size: 1.2vw;
     line-height: 3.3vh;
     text-align: center;
@@ -232,7 +238,8 @@ button {
 
 
     background: rgba(127, 127, 127, 0.5);
-    border-radius: 0.3vw;
+    border-bottom-right-radius: 0.75vw;
+    border-bottom-left-radius: 0.75vw;
 
     font-size: 1.2vw;
     line-height: 3.3vh;
@@ -254,7 +261,9 @@ button {
 
 
     background: rgba(127, 127, 127, 0.5);
-    border-radius: 0.3vw;
+    border-bottom-right-radius: 0.75vw;
+    border-bottom-left-radius: 0.75vw;
+    /* border-radius: 0.3vw; */
 
     font-size: 1vw;
     line-height: 3.3vh;
@@ -288,18 +297,9 @@ button {
     border: none;
 }
 
-.tile-small:active,
-.dropdown-large:focus,
-.dropdown-medium:focus,
-.input-large:focus,
-.stepper button:active,
-.weaponSelect:active {
+.clickable:active {
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     /* transition: all 5s ease-in-out; */
-}
-
-.weaponSelect::after {
-    box-shadow: 0px 4px 4px rgba(255, 230, 0, 0.25);
 }
 
 .slot-large {
@@ -320,12 +320,8 @@ button {
 
 .slot-large img {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    height: 15vh;
+    height: 20vh;
     transition: all 1s ease-in-out;
-}
-
-.slot-large:active {
-    height: 40vh;
 }
 
 .slot-small {
@@ -350,26 +346,63 @@ button {
     filter: opacity(0.4);
 }
 
-.light-armor:focus {
+.light-armor:active {
     color: rgb(0, 255, 0, 0.5);
 }
 
-.medium-armor:focus {
+.medium-armor:active {
     color: rgb(255, 255, 0, 0.5);
 }
 
-.heavy-armor:focus {
+.heavy-armor:active {
     color: rgb(255, 0, 0, 0.5);
 }
 
-.card-2 .column{
+.group {
+    /* border: solid red; */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(2vh);
+    border-radius: 0.75vw;
+    height: fit-content;
+}
+
+.div-row {
+    display: flex;
+    width: 13.248vw;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.div-group {
+    display: flex;
+    flex-direction: column;
+    /* width: 13.248vw; */
+    gap: 0.5vh;
+}
+
+.teste {
+    height: 2.83vh;
+    background: rgba(255, 0, 0, 0.5);
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+    backdrop-filter: blur(2vh);
+    text-align: center;
+    color: white;
+}
+
+.card-2 .column:last-child {
+    justify-content: space-around;
+}
+
+.card-2 .column {
+    height: 40vh;
     gap: 2vh;
 }
-.card-3 .column{
+
+.card-3 .column {
     gap: 1vh;
 }
 
-.card-4 .column{
+.card-4 .column {
     gap: 0.5vh;
 }
 
@@ -388,18 +421,38 @@ button {
     display: flex;
     flex-direction: row;
     background: rgba(127, 127, 127, 0.5);
-    border-radius: 0.3vw;
+    /* border-radius: 0.3vw; */
+    border-bottom-right-radius: 0.75vw;
+    border-bottom-left-radius: 0.75vw;
     justify-content: space-between;
     width: 6.5vw;
 }
 
-.stpBtn {
+.stpBtnSub {
     width: 1.5vw;
     height: 2.83vh;
 
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     background: rgba(127, 127, 127, 0.5);
     border-radius: 0.3vw;
+    border-top-left-radius: 0vw;
+    border-bottom-left-radius: 0.75vw;
+
+    display: flex;
+    border: none;
+    align-items: center;
+    justify-items: center;
+}
+
+.stpBtnAdd {
+    width: 1.5vw;
+    height: 2.83vh;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    background: rgba(127, 127, 127, 0.5);
+    border-radius: 0.3vw;
+    border-top-right-radius: 0vw;
+    border-bottom-right-radius: 0.75vw;
 
     display: flex;
     border: none;
@@ -434,8 +487,6 @@ canvas {
     width: 15vh !important;
     height: 15vh !important;
 }
-
-.teste {}
 
 .stepper span {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
