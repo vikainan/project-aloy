@@ -214,3 +214,142 @@ function spc() {
 `;
 	}
 }
+
+var counter = str + def + vit + wis + dex + cha;
+var str = 5;
+var def = 5;
+var wis = 5;
+var cha = 5;
+var vit = 5;
+var dex = 5;
+var chart;
+
+function onload() {
+	var divAtbStr = document.getElementById("divAtbStr");
+	var divAtbDef = document.getElementById("divAtbDef");
+	var divAtbVit = document.getElementById("divAtbVit");
+	var divAtbWis = document.getElementById("divAtbWis");
+	var divAtbDex = document.getElementById("divAtbDex");
+	var divAtbCha = document.getElementById("divAtbCha");
+
+	divAtbStr.innerHTML = `STR +${str}`;
+	divAtbDef.innerHTML = `DEF +${def}`;
+	divAtbVit.innerHTML = `VIT +${vit}`;
+	divAtbWis.innerHTML = `WIS +${wis}`;
+	divAtbDex.innerHTML = `DEX +${dex}`;
+	divAtbCha.innerHTML = `CHA +${cha}`;
+
+	var ctx = document.getElementById("atbChart").getContext("2d");
+
+	chart = new Chart(ctx, {
+		type: "radar",
+
+		data: {
+			labels: ["STR", "DEF", "VIT", "WIS", "DEX", "CHA"],
+			datasets: [
+				{
+					label: "",
+					data: [str, def, vit, wis, dex, cha],
+					fill: true,
+					backgroundColor: "rgba(0, 64, 128, 0.5)",
+				},
+			],
+		},
+
+		options: {
+			plugins: {
+				legend: {
+					display: false,
+				},
+			},
+			scales: {
+				r: {
+					angleLines: {
+						display: true,
+						color: "black",
+					},
+					grid: {
+						display: false,
+					},
+					ticks: {
+						display: false,
+					},
+					pointLabels: {
+						// padding: 1,
+						color: "rgba(255, 255, 255, 0.8)",
+						font: {
+							size: 12,
+							// style: "italic",
+							lineHeight: 1.2,
+							family: "aincrad-font",
+							borderColor: "red",
+						},
+					},
+					suggestedMin: 1,
+					suggestedMax: 10,
+				},
+			},
+		},
+	});
+}
+function sub(fieldname) {
+	if (fieldname == "strength" && str > 1) {
+		str--;
+		divAtbStr.innerHTML = `STR +${str}`;
+	}
+	if (fieldname == "defense" && def > 1) {
+		def--;
+		divAtbDef.innerHTML = `DEF +${def}`;
+	}
+	if (fieldname == "vitality" && vit > 1) {
+		vit--;
+		divAtbVit.innerHTML = `VIT +${vit}`;
+	}
+	if (fieldname == "wisdom" && wis > 1) {
+		wis--;
+		divAtbWis.innerHTML = `WIS +${wis}`;
+	}
+	if (fieldname == "dexterity" && dex > 1) {
+		dex--;
+		divAtbDex.innerHTML = `DEX +${dex}`;
+	}
+	if (fieldname == "charisma" && cha > 1) {
+		cha--;
+		divAtbCha.innerHTML = `CHA +${cha}`;
+	}
+	counter = str + def + vit + wis + dex + cha;
+
+	chart.data.datasets[0].data = [str, def, vit, wis, dex, cha];
+	chart.update();
+}
+
+function add(fieldname) {
+	if (fieldname == "strength" && counter < 35) {
+		str++;
+		divAtbStr.innerHTML = `STR +${str}`;
+	}
+	if (fieldname == "defense" && counter < 35) {
+		def++;
+		divAtbDef.innerHTML = `DEF +${def}`;
+	}
+	if (fieldname == "vitality" && counter < 35) {
+		vit++;
+		divAtbVit.innerHTML = `VIT +${vit}`;
+	}
+	if (fieldname == "wisdom" && counter < 35) {
+		wis++;
+		divAtbWis.innerHTML = `WIS +${wis}`;
+	}
+	if (fieldname == "dexterity" && counter < 35) {
+		dex++;
+		divAtbDex.innerHTML = `DEX +${dex}`;
+	}
+	if (fieldname == "charisma" && counter < 35) {
+		cha++;
+		divAtbCha.innerHTML = `CHA +${cha}`;
+	}
+	counter = str + def + vit + wis + dex + cha;
+
+	chart.data.datasets[0].data = [str, def, vit, wis, dex, cha];
+	chart.update();
+}

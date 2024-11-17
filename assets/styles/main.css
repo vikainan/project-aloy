@@ -43,9 +43,7 @@ button {
     gap: 1.75vw;
     isolation: isolate;
 
-    flex: none;
     order: 0;
-    flex-grow: 0;
 
 
     /*--------------------*/
@@ -146,11 +144,11 @@ button {
 
 .card-4 {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 2.5vh 1.25vw;
-    gap: 1.25vw;
+    gap: 0.5vh;
     width: 20vw;
     height: 50vh;
     background: rgba(255, 255, 255, 0.3);
@@ -159,127 +157,111 @@ button {
     border-radius: 2.5vw;
 }
 
-.equipment {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5vh;
-}
-
-.slots {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5vh;
-}
-
-.text-medium {
+.text-large {
     width: 13vw;
-    height: 3vh;
-    flex: none;
-    flex-grow: 0;
+    height: 2.83vh;
     background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(1vw);
     border-radius: 0.3vw;
-    font-style: normal;
     font-weight: 700;
-    font-style: monospace;
     font-size: 1.2vw;
+    /* line-height: 37vh; */
+    text-align: center;
+    align-content: end;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.text-medium {
+    width: 6.5vw;
+    height: 2.83vh;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(1vw);
+    border-radius: 0.3vw;
+    font-weight: 700;
+    font-size: 1vw;
     line-height: 3.3vh;
     text-align: center;
+    align-content: end;
     color: rgba(0, 0, 0, 0.5);
 }
 
 .text-small {
-    width: 6.5vw;
-    height: 3vh;
-    flex: none;
-    flex-grow: 0;
+    width: 4.25vw;
+    height: 2.83vh;
     background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(1vw);
     border-radius: 0.3vw;
-    font-style: normal;
     font-weight: 700;
-    font-style: monospace;
     font-size: 1vw;
     line-height: 3.3vh;
     text-align: center;
+    align-content: end;
     color: rgba(0, 0, 0, 0.5);
 }
 
-.input-medium {
+.input-large {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     isolation: isolate;
     width: 13vw;
-    height: 3vh;
+    height: 2.83vh;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    flex: none;
-    flex-grow: 0;
     background: rgba(127, 127, 127, 0.5);
     border-radius: 0.3vw;
-    font-style: normal;
-    font-weight: 700;
-    font-style: monospace;
     font-size: 1.2vw;
     line-height: 3.3vh;
     text-align: center;
+    align-content: end;
     color: rgba(255, 255, 255);
     border: none;
 }
 
-.input-medium::placeholder {
+.input-large::placeholder {
     color: rgba(255, 255, 255, 0.75);
+}
+
+.dropdown-large {
+
+    border: none;
+    width: 13vw;
+    height: 2.83vh;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+
+    background: rgba(127, 127, 127, 0.5);
+    border-radius: 0.3vw;
+
+    font-size: 1.2vw;
+    line-height: 3.3vh;
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+    align-content: end;
+
+    color: #fff;
 }
 
 .dropdown-medium {
 
     border: none;
-    width: 13vw;
-    height: 3vh;
-
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-
-    flex: none;
-    flex-grow: 0;
-
-    background: rgba(127, 127, 127, 0.5);
-    border-radius: 0.3vw;
-
-    font-style: normal;
-    font-weight: 700;
-    font-style: monospace;
-    font-size: 1.2vw;
-    line-height: 3.3vh;
-    display: flex;
-    align-items: flex-end;
-    text-align: center;
-
-    color: #fff;
-}
-
-.dropdown-small {
-
-    border: none;
     width: 6.5vw;
-    height: 3vh;
+    height: 2.83vh;
 
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
-    flex: none;
-    flex-grow: 0;
 
     background: rgba(127, 127, 127, 0.5);
     border-radius: 0.3vw;
 
-    font-style: normal;
-    font-weight: 700;
-    font-style: monospace;
     font-size: 1vw;
     line-height: 3.3vh;
     display: flex;
     align-items: flex-end;
     text-align: center;
+    align-content: end;
 
     color: #fff;
 }
@@ -299,6 +281,7 @@ button {
     font-size: 2vw;
     align-items: center;
     text-align: center;
+    align-content: end;
 
     color: rgba(0, 0, 0, 0.75);
 
@@ -306,9 +289,9 @@ button {
 }
 
 .tile-small:active,
+.dropdown-large:focus,
 .dropdown-medium:focus,
-.dropdown-small:focus,
-.input-medium:focus,
+.input-large:focus,
 .stepper button:active,
 .weaponSelect:active {
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -379,16 +362,26 @@ button {
     color: rgb(255, 0, 0, 0.5);
 }
 
+.card-2 .column{
+    gap: 2vh;
+}
+.card-3 .column{
+    gap: 1vh;
+}
+
+.card-4 .column{
+    gap: 0.5vh;
+}
+
 .column {
     display: flex;
     flex-direction: column;
-    gap: 1vh;
     align-items: center;
 }
 
 .attributes {
     display: flex;
-    gap: 0.5vw;
+    gap: 0.25vw;
 }
 
 .stepper {
@@ -400,9 +393,9 @@ button {
     width: 6.5vw;
 }
 
-.stepper button {
+.stpBtn {
     width: 1.5vw;
-    height: 3vh;
+    height: 2.83vh;
 
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     background: rgba(127, 127, 127, 0.5);
@@ -419,15 +412,44 @@ svg {
     height: inherit;
 }
 
+.disabled {
+    /* filter: opacity(0.1); */
+    background: red;
+}
+
+.chart {
+    align-content: center;
+    justify-items: center;
+    width: 18vh;
+    height: 18vh;
+    background-image: url("/assets/img/chart.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    /* background-color: red; */
+}
+
+canvas {
+    margin-top: 0.3vh;
+    width: 15vh !important;
+    height: 15vh !important;
+}
+
+.teste {}
+
 .stepper span {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     background: rgba(127, 127, 127, 0.5);
     border-radius: 0.3vw;
 
+    display: flex;
+    justify-content: center;
     color: #fff;
-    width: 1.9vw;
-    height: 3vh;
+    width: fit-content;
+    height: 2.83vh;
+    padding: 0 0.2vw;
     font-size: 0.7vw;
     line-height: 3.1vh;
     text-align: center;
+    align-content: end;
 }
