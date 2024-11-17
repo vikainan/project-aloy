@@ -7,6 +7,7 @@
     font-family: aincrad-font;
     box-sizing: border-box;
     user-select: none;
+    -webkit-user-drag: none;
 }
 
 html {
@@ -299,7 +300,6 @@ button {
 
 .clickable:active {
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    /* transition: all 5s ease-in-out; */
 }
 
 .slot-large {
@@ -335,6 +335,8 @@ button {
     align-items: center;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(2vh);
+    /* border-bottom-right-radius: 0.75vw;
+    border-bottom-left-radius: 0.75vw; */
     border-radius: 1.5vh;
 }
 
@@ -381,12 +383,9 @@ button {
 }
 
 .teste {
-    height: 2.83vh;
-    background: rgba(255, 0, 0, 0.5);
-    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
-    backdrop-filter: blur(2vh);
-    text-align: center;
-    color: white;
+    /* box-shadow: 0px 1px 10px 4px rgba(0, 155, 255, 0.5); */
+    box-shadow: 0px 1px 10px 4px red;
+    transition: all 0.25s ease-in-out;
 }
 
 .card-2 .column:last-child {

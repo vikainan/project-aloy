@@ -292,6 +292,7 @@ function onload() {
 		},
 	});
 }
+
 function sub(fieldname) {
 	if (fieldname == "strength" && str > 1) {
 		str--;
@@ -352,4 +353,43 @@ function add(fieldname) {
 
 	chart.data.datasets[0].data = [str, def, vit, wis, dex, cha];
 	chart.update();
+}
+
+function selectWeapon(fieldname) {
+	var sword = document.getElementById("weapon1");
+	var bow = document.getElementById("weapon2");
+	var polearm = document.getElementById("weapon3");
+	var wand = document.getElementById("weapon4");
+	var dagger = document.getElementById("weapon5");
+	var shield = document.getElementById("weapon6");
+
+	sword.classList.remove("teste");
+	bow.classList.remove("teste");
+	polearm.classList.remove("teste");
+	wand.classList.remove("teste");
+	dagger.classList.remove("teste");
+	shield.classList.remove("teste");
+
+	if (fieldname == "sword") {
+		sword.classList.add("teste");
+	}
+	if (fieldname == "bow") {
+		bow.classList.add("teste");
+	}
+	if (fieldname == "polearm") {
+		polearm.classList.add("teste");
+	}
+	if (fieldname == "wand") {
+		wand.classList.add("teste");
+	}
+	if (fieldname == "dagger") {
+		dagger.classList.add("teste");
+	}
+	if (fieldname == "shield") {
+		shield.classList.add("teste");
+	}
+}
+
+function reload() {
+    window.location.reload();
 }

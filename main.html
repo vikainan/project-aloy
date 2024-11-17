@@ -99,43 +99,43 @@
 					</div>
 					<div class="card-3">
 						<div class="div-row">
-							<div class="group">
+							<div class="group" id="weapon1">
 								<div class="text-small">Sword</div>
-								<div value="1" id="weapon1" class="slot-small clickable" onclick="selectWeapon()">
+								<div class="slot-small" onclick="selectWeapon('sword')">
 									<img src="/assets/img/weapon/sword.png" />
 								</div>
 							</div>
-							<div class="group">
+							<div class="group" id="weapon4">
 								<div class="text-small">Wand</div>
-								<div value="4" id="weapon4" class="slot-small clickable" onclick="selectWeapon()">
+								<div class="slot-small" onclick="selectWeapon('wand')">
 									<img src="/assets/img/weapon/wand.png" />
 								</div>
 							</div>
 						</div>
 						<div class="div-row">
-							<div class="group">
+							<div class="group" id="weapon2">
 								<div class="text-small">Bow</div>
-								<div value="2" id="weapon2" class="slot-small clickable" onclick="selectWeapon()">
+								<div class="slot-small" onclick="selectWeapon('bow')">
 									<img src="/assets/img/weapon/bow.png" />
 								</div>
 							</div>
-							<div class="group">
+							<div class="group" id="weapon5">
 								<div class="text-small">Dagger</div>
-								<div value="5" id="weapon5" class="slot-small clickable" onclick="selectWeapon()">
+								<div class="slot-small" onclick="selectWeapon('dagger')">
 									<img src="/assets/img/weapon/dagger.png" />
 								</div>
 							</div>
 						</div>
 						<div class="div-row">
-							<div class="group">
+							<div class="group" id="weapon3">
 								<div class="text-small">Polearm</div>
-								<div value="3" id="weapon3" class="slot-small clickable" onclick="selectWeapon()">
+								<div class="slot-small" onclick="selectWeapon('polearm')">
 									<img src="/assets/img/weapon/polearm.png" />
 								</div>
 							</div>
-							<div class="group">
+							<div class="group" id="weapon6">
 								<div class="text-small">Shield</div>
-								<div value="6" id="weapon6" class="slot-small clickable" onclick="selectWeapon()">
+								<div class="slot-small" onclick="selectWeapon('shield')">
 									<img src="/assets/img/weapon/shield.png" />
 								</div>
 							</div>
@@ -250,7 +250,7 @@
 					</div>
 				</div>
 				<div class="buttons">
-					<button class="tile-small clickable">Reset</button>
+					<button class="tile-small clickable" onclick="reload()">Reset</button>
 					<button class="tile-small clickable">Done</button>
 				</div>
 			</div>
