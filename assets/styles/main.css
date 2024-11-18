@@ -42,11 +42,10 @@ button {
 .navbar {
     display: flex;
     flex-direction: row;
+    justify-content: start;
     align-items: center;
     gap: 1.75vw;
-    isolation: isolate;
-    order: 0;
-    /*--------------------*/
+    padding-left: 2vw;
     width: 100%;
     height: 5vh;
     background: rgba(255, 255, 255, 0.3);
@@ -486,6 +485,7 @@ canvas {
 
 .divider {
     height: 2.5vh;
-    border: 5px solid rgba(255, 255, 255, 0.5);
-    transform: rotate(-90deg);
+    width: 0.25vw;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 1vw;
 }
