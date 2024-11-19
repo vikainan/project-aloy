@@ -12,11 +12,19 @@
 	<body onload="onload()">
 		<div class="mainpage">
 			<nav class="navbar">
+				<div class="nav-left">
 				<a>Home</a>
 				<div class="divider"></div>
-				<a>Creator</a>
+				<a class="disabled">Creator</a>
 				<div class="divider"></div>
 				<a>Dashboard</a>
+				</div>
+				<div class="nav-right">
+					<a>Log out</a>
+					<div class="divider"></div>
+					<a>Profile</a>
+					<div class="slot-small"></div>
+				</div>
 			</nav>
 			<div class="container">
 				<div class="tiles">
@@ -52,7 +60,7 @@
 					</div>
 					<div class="card-2">
 						<div class="div-row">
-							<div class="slot-small">
+							<div class="slot-medium">
 								<img src="/assets/img/armor/top.png" class="slot-disabled" />
 							</div>
 							<div class="group">
@@ -66,7 +74,7 @@
 							</div>
 						</div>
 						<div class="div-row">
-							<div class="slot-small">
+							<div class="slot-medium">
 								<img src="/assets/img/armor/middle.png" class="slot-disabled" />
 							</div>
 							<div class="group">
@@ -80,7 +88,7 @@
 							</div>
 						</div>
 						<div class="div-row">
-							<div class="slot-small">
+							<div class="slot-medium">
 								<img src="/assets/img/armor/lower.png" class="slot-disabled" />
 							</div>
 							<div class="group">
@@ -94,7 +102,7 @@
 							</div>
 						</div>
 						<div class="div-row">
-							<div class="slot-small">
+							<div class="slot-medium">
 								<img src="/assets/img/armor/bottom.png" class="slot-disabled" />
 							</div>
 							<div class="group">
@@ -112,13 +120,13 @@
 						<div class="div-row">
 							<div class="group" id="weapon1">
 								<div class="text-small">Sword</div>
-								<div class="slot-small" onclick="selectWeapon('sword')">
+								<div class="slot-medium" onclick="selectWeapon('sword')">
 									<img src="/assets/img/weapon/sword.png" />
 								</div>
 							</div>
 							<div class="group" id="weapon4">
 								<div class="text-small">Wand</div>
-								<div class="slot-small" onclick="selectWeapon('wand')">
+								<div class="slot-medium" onclick="selectWeapon('wand')">
 									<img src="/assets/img/weapon/wand.png" />
 								</div>
 							</div>
@@ -126,13 +134,13 @@
 						<div class="div-row">
 							<div class="group" id="weapon2">
 								<div class="text-small">Bow</div>
-								<div class="slot-small" onclick="selectWeapon('bow')">
+								<div class="slot-medium" onclick="selectWeapon('bow')">
 									<img src="/assets/img/weapon/bow.png" />
 								</div>
 							</div>
 							<div class="group" id="weapon5">
 								<div class="text-small">Dagger</div>
-								<div class="slot-small" onclick="selectWeapon('dagger')">
+								<div class="slot-medium" onclick="selectWeapon('dagger')">
 									<img src="/assets/img/weapon/dagger.png" />
 								</div>
 							</div>
@@ -140,13 +148,13 @@
 						<div class="div-row">
 							<div class="group" id="weapon3">
 								<div class="text-small">Polearm</div>
-								<div class="slot-small" onclick="selectWeapon('polearm')">
+								<div class="slot-medium" onclick="selectWeapon('polearm')">
 									<img src="/assets/img/weapon/polearm.png" />
 								</div>
 							</div>
 							<div class="group" id="weapon6">
 								<div class="text-small">Shield</div>
-								<div class="slot-small" onclick="selectWeapon('shield')">
+								<div class="slot-medium" onclick="selectWeapon('shield')">
 									<img src="/assets/img/weapon/shield.png" />
 								</div>
 							</div>
@@ -264,8 +272,10 @@
 					<button class="tile-small clickable" onclick="reload()">Reset</button>
 					<button class="tile-small clickable">Done</button>
 				</div>
+				<div class="footer">
+					©2014 REKI KAWAHARA/PUBLISHED BY KADOKAWA CORPORATION ASCII MEDIA WORKS/SAOII Project ©REKI KAWAHARA/ASCII MEDIA WORKS/SAO Project
+				</div>
 			</div>
 		</div>
 	</body>
-	<!-- <footer>©2014 REKI KAWAHARA/PUBLISHED BY KADOKAWA CORPORATION ASCII MEDIA WORKS/SAOII Project ©REKI KAWAHARA/ASCII MEDIA WORKS/SAO Project</footer> -->
 </html>
