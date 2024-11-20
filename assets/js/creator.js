@@ -174,10 +174,6 @@ function add(fieldname) {
 }
 
 function equipChange(fieldname) {
-    var eHead = iptTop.value;
-    var eTorso = iptTop.value;
-    var eLegs = iptTop.value;
-    var eFeet = iptTop.value;
     var slotTop = document.getElementById("slotTop");
     var slotMiddle = document.getElementById("slotMiddle");
     var slotLower = document.getElementById("slotLower");
@@ -229,30 +225,30 @@ function selectWeapon(fieldname) {
     var dagger = document.getElementById("weapon5");
     var shield = document.getElementById("weapon6");
 
-    sword.classList.remove("teste");
-    bow.classList.remove("teste");
-    polearm.classList.remove("teste");
-    wand.classList.remove("teste");
-    dagger.classList.remove("teste");
-    shield.classList.remove("teste");
+    sword.classList.remove("weapon");
+    bow.classList.remove("weapon");
+    polearm.classList.remove("weapon");
+    wand.classList.remove("weapon");
+    dagger.classList.remove("weapon");
+    shield.classList.remove("weapon");
 
     if (fieldname == "sword") {
-        sword.classList.add("teste");
+        sword.classList.add("weapon");
     }
     if (fieldname == "bow") {
-        bow.classList.add("teste");
+        bow.classList.add("weapon");
     }
     if (fieldname == "polearm") {
-        polearm.classList.add("teste");
+        polearm.classList.add("weapon");
     }
     if (fieldname == "wand") {
-        wand.classList.add("teste");
+        wand.classList.add("weapon");
     }
     if (fieldname == "dagger") {
-        dagger.classList.add("teste");
+        dagger.classList.add("weapon");
     }
     if (fieldname == "shield") {
-        shield.classList.add("teste");
+        shield.classList.add("weapon");
     }
 }
 
