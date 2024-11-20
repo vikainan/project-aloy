@@ -75,6 +75,21 @@
     gap: 0.5vh;
 }
 
+.slot-large img {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    height: 20vh;
+    transition: all 1s ease-in-out;
+}
+
+.slot-medium img {
+    height: 7vh;
+}
+
+.slot-small img {
+    height: 3.5vh;
+}
+
+
 .attributes {
     display: flex;
     gap: 0.25vw;
