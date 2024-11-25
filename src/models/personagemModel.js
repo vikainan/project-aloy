@@ -41,7 +41,7 @@ function criar(idusuario, nome, especie, strength, defense, wisdom, charisma, vi
         bottomarmor, 
         weapon) 
         VALUES (
-            '${personagem[0].idpersonagem}', 
+            '(${instrucaoSql2})', 
             '${toparmor}', 
             '${middlearmor}', 
             '${lowerarmor}', 
@@ -52,8 +52,8 @@ function criar(idusuario, nome, especie, strength, defense, wisdom, charisma, vi
 	database.executar(instrucaoSql3);
 	console.log("Executando a instrução SQL: \n" + instrucaoSql3);
 
-	var instrucaoSql4 = `SELECT * FROM equipamento WHERE idpersonagem = ${personagem[0].idpersonagem}`;
-	var equipamento = database.executar(instrucaoSql4);
+	// var instrucaoSql4 = `SELECT * FROM equipamento WHERE idpersonagem = ${personagem[0].idpersonagem}`;
+	// var equipamento = database.executar(instrucaoSql4);
 
 	return { personagem: personagem[0], equipamento: equipamento[0] };
 }
