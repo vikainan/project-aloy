@@ -1,6 +1,6 @@
 # project-aloy
 
-![homepage](assets/img/homepage.jpg)
-![character creator](assets/img/character%20creator.jpg)
-![profile](assets/img/profile.jpg)
-![dashboard](assets/img/dashboard.jpg)
+![homepage](public/assets/img/homepage.jpg)
+![character creator](public/assets/img/character%20creator.jpg)
+![profile](public/assets/img/profile.jpg)
+![dashboard](public/assets/img/dashboard.jpg)
