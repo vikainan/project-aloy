@@ -27,7 +27,7 @@ function criar(idusuario, nome, especie, strength, defense, wisdom, charisma, vi
 	database.executar(instrucaoSql1);
 	console.log("Executando a instrução SQL: \n" + instrucaoSql1);
 
-	var instrucaoSql2 = `SELECT * FROM personagem WHERE idusuario = ${idusuario}`;
+	var instrucaoSql2 = `SELECT idpersonagem FROM personagem WHERE idusuario = ${idusuario}`;
 	var personagem = database.executar(instrucaoSql2);
 	console.log("Executando a instrução SQL: \n" + instrucaoSql2);
 	console.log(personagem);
