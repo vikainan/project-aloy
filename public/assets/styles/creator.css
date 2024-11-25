@@ -137,7 +137,7 @@
     justify-items: center;
     width: 18vh;
     height: 18vh;
-    background-image: url("/assets/img/chart.svg");
+    background-image: url("../img/chart.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
