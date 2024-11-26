@@ -79,7 +79,33 @@ function criar(req, res) {
 	}
 }
 
+function verificar(req, res) {
+	var idusuario = req.params.idusuario;
+
+	if (idusuario == undefined) {
+		res.status(400).send("idusuario está undefined!");
+	} else {
+		personagemModel
+			.verificar(idusuario)
+			.then(function (resultado) {
+				console.log(`\nResultados encontrados: ${resultado.length}`);
+				console.log(`Resultados: ${JSON.stringify(resultado)}`);
+				if (resultado.length == 1) {
+					res.status(200).json(true);
+				} else {
+					res.status(200).json(false);
+				}
+			})
+			.catch(function (erro) {
+				console.log(erro);
+				console.log("\nHouve um erro ao verificar personagem! Erro: ", erro.sqlMessage);
+				res.status(500).json(erro.sqlMessage);
+			});
+	}
+}
+
 module.exports = {
+	verificar,
 	exibir,
 	criar,
 };

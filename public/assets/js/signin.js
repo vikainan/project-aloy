@@ -163,7 +163,7 @@ function acessar() {
 
 					sessionStorage.setItem("auth", "true");
 					painel.innerHTML = `
-					<span style="color: rgba(0, 255, 0, 0.3)">
+					<span style="color: rgba(0, 175, 0, 0.75)">
 					Login realizado com sucesso!
 					Redirecionando para criação de personagem</span>`;
 

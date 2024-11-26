@@ -282,4 +282,29 @@
 		</div>
 		<footer>©2014 REKI KAWAHARA/PUBLISHED BY KADOKAWA CORPORATION ASCII MEDIA WORKS/SAOII Project ©REKI KAWAHARA/ASCII MEDIA WORKS/SAO Project</footer>
 	</body>
+	<script>
+		var idusuario = sessionStorage.getItem("idusuario");
+
+		fetch(`/personagem/verificar/${idusuario}`, {
+			method: "GET",
+			headers: {
+				"Content-Type": "application/json",
+			},
+		})
+			.then(function (resposta) {
+				console.log("resposta: ", resposta);
+				if (resposta.ok) {
+					resposta.json().then((json) => {
+						console.log(json);
+						if (json) {
+							alert("Personagem já criado!");
+							window.location = "profile.html";
+						}
+					});
+				}
+			})
+			.catch(function (resposta) {
+				console.log(`#ERRO: ${resposta}`);
+			});
+	</script>
 </html>

@@ -7,6 +7,13 @@ function exibir(idusuario) {
 	return database.executar(instrucaoSql);
 }
 
+function verificar(idusuario) {
+	var instrucaoSql = `
+    SELECT * FROM personagem WHERE idusuario = ${idusuario}`;
+	console.log("Executando a instrução SQL: \n" + instrucaoSql);
+	return database.executar(instrucaoSql);
+}
+
 async function criar(idusuario, nome, especie, strength, defense, wisdom, charisma, vitality, dexterity, toparmor, middlearmor, lowerarmor, bottomarmor, weapon) {
 	var instrucaoSql1 = `
         INSERT INTO personagem (
@@ -62,6 +69,7 @@ async function criar(idusuario, nome, especie, strength, defense, wisdom, charis
 }
 
 module.exports = {
+	verificar,
 	exibir,
 	criar,
 };

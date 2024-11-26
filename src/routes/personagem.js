@@ -12,4 +12,8 @@ router.get("/exibir/:idusuario", function (req, res) {
     personagemController.exibir(req, res);
 });
 
+router.get("/verificar/:idusuario", function (req, res) {
+    personagemController.verificar(req, res);
+});
+
 module.exports = router;
