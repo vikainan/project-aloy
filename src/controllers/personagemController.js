@@ -1,31 +1,23 @@
 var personagemModel = require("../models/personagemModel");
 
-function autenticar(req, res) {
-	var username = req.body.username;
-	var senha = req.body.senha;
+function exibir(req, res) {
+	var idusuario = req.params.idusuario;
 
-	if (username == undefined) {
-		res.status(400).send("Seu username está undefined!");
-	} else if (senha == undefined) {
-		res.status(400).send("Sua senha está undefined!");
+	if (idusuario == undefined) {
+		res.status(400).send("idusuario está undefined!");
 	} else {
 		personagemModel
-			.autenticar(username, senha)
-			.then(function (resultadoAutenticar) {
-				console.log(`\nResultados encontrados: ${resultadoAutenticar.length}`);
-				console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`);
-				if (resultadoAutenticar.length == 1) {
-					console.log(resultadoAutenticar);
-					res.status(200).send(resultadoAutenticar);
-				} else if (resultadoAutenticar.length == 0) {
-					res.status(403).send("Username e/ou senha inválido(s)");
-				} else {
-					res.status(403).send("Mais de um usuário com o mesmo login e senha!");
+			.exibir(idusuario)
+			.then(function (resultado) {
+				console.log(`\nResultados encontrados: ${resultado.length}`);
+				console.log(`Resultados: ${JSON.stringify(resultado)}`);
+				if (resultado.length == 1) {
+					res.status(200).json(resultado);
 				}
 			})
 			.catch(function (erro) {
 				console.log(erro);
-				console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+				console.log("\nHouve um erro ao exibir perfil! Erro: ", erro.sqlMessage);
 				res.status(500).json(erro.sqlMessage);
 			});
 	}
@@ -88,6 +80,6 @@ function criar(req, res) {
 }
 
 module.exports = {
-	autenticar,
+	exibir,
 	criar,
 };

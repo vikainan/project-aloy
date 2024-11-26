@@ -8,7 +8,7 @@ router.post("/criar", function (req, res) {
     personagemController.criar(req, res);
 })
 
-router.post("/exibir", function (req, res) {
+router.get("/exibir/:idusuario", function (req, res) {
     personagemController.exibir(req, res);
 });
 

@@ -7,11 +7,12 @@
 		<link rel="stylesheet" href="assets/styles/main.css" />
 		<link rel="stylesheet" href="assets/styles/profile.css" />
 		<script src="assets/js/creator.js" type="text/javascript"></script>
+		<script src="assets/js/profile.js" type="text/javascript"></script>
 		<script src="assets/js/logged.js" type="text/javascript"></script>
 		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 		<title>Profile</title>
 	</head>
-	<body onload="onload()">
+	<body onload="onload(), exibir()">
 		<div class="mainpage">
 			<nav class="navbar">
 				<div class="nav-left">
@@ -53,11 +54,11 @@
 						<div class="column">
 							<div class="group">
 								<div class="text-large"><span>Name</span></div>
-								<div class="text-large"><span></span></div>
+								<div class="text-large"><span id="slotName"></span></div>
 							</div>
 							<div class="group">
 								<div class="text-large">Specie</div>
-								<div class="text-large"></div>
+								<div class="text-large"><span id="slotSpecie"></span></div>
 							</div>
 							<div class="slot-large" id="spcImg">
 								<img src="assets/img/species/imp.png" />
@@ -68,13 +69,13 @@
 							<div class="div-row">
 								<div class="group">
 									<div class="text-small">Top</div>
-									<div class="slot-medium">
+									<div class="slot-medium" id="slotTop">
 										<img src="assets/img/armor/light/top.png" />
 									</div>
 								</div>
 								<div class="group">
 									<div class="text-small">Middle</div>
-									<div class="slot-medium">
+									<div class="slot-medium" id="slotMiddle">
 										<img src="assets/img/armor/medium/middle.png" />
 									</div>
 								</div>
@@ -82,20 +83,20 @@
 							<div class="div-row">
 								<div class="group">
 									<div class="text-small">Lower</div>
-									<div class="slot-medium">
+									<div class="slot-medium" id="slotLower">
 										<img src="assets/img/armor/light/lower.png" />
 									</div>
 								</div>
 								<div class="group">
 									<div class="text-small">Bottom</div>
-									<div class="slot-medium">
+									<div class="slot-medium" id="slotBottom">
 										<img src="assets/img/armor/medium/bottom.png" />
 									</div>
 								</div>
 							</div>
 							<div class="group">
 								<div class="text-small">Weapon</div>
-								<div class="slot-medium">
+								<div class="slot-medium" id="slotWeapon">
 									<img src="assets/img/weapon/sword.png" />
 								</div>
 							</div>

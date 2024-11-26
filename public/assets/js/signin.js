@@ -28,7 +28,7 @@ function cadastrar() {
 	var msg = "";
 	var painel = document.getElementById("painel");
 
-	var symbol = "!@#$%&*()¨";
+	var symbol = "!@#$%&*()¨.";
 	var numbers = "0123456789";
 
 	var pwdUpper = userpwd.toUpperCase();
@@ -47,7 +47,7 @@ function cadastrar() {
 				hasSymbol = true;
 			}
 		}
-		if (hasSymbol || username.length < 8) {
+		if (hasSymbol || username.length < 6) {
 			msg += `Nome de usuário inválido. Verifique os caracteres utilizados.<br>`;
 			isUserValid = false;
 			painel.innerHTML = msg;
@@ -162,10 +162,13 @@ function acessar() {
 					});
 
 					sessionStorage.setItem("auth", "true");
-					painel.innerHTML = "Login realizado com sucesso! Redirecionando para tela de Inicio...";
+					painel.innerHTML = `
+					<span style="color: rgba(0, 255, 0, 0.3)">
+					Login realizado com sucesso!
+					Redirecionando para criação de personagem</span>`;
 
 					setTimeout(() => {
-						window.location = "homepage.html";
+						window.location = "creator.html";
 					}, "2500");
 				} else {
 					throw "Houve um erro ao tentar realizar o login!";

@@ -1,31 +1,31 @@
 function spc() {
 	var specie = document.getElementById("iptSpc").value;
 
-	if (specie == 1) {
+	if (specie == "Sylph") {
 		spcImg.innerHTML = `
         <img src="assets/img/species/sylph.png" />`;
-	} else if (specie == 2) {
+	} else if (specie == "Salamander") {
 		spcImg.innerHTML = `
         <img src="assets/img/species/salamander.png" />`;
-	} else if (specie == 3) {
+	} else if (specie == "Gnome") {
 		spcImg.innerHTML = `
         <img src="assets/img/species/gnome.png" />`;
-	} else if (specie == 4) {
+	} else if (specie == "Undine") {
 		spcImg.innerHTML = `
         <img src="assets/img/species/undine.png" />`;
-	} else if (specie == 5) {
+	} else if (specie == "Cait_Sith") {
 		spcImg.innerHTML = `
         <img src="assets/img/species/cait_sith.png" />`;
-	} else if (specie == 6) {
+	} else if (specie == "Imp") {
 		spcImg.innerHTML = `
         <img src="assets/img/species/imp.png" />`;
-	} else if (specie == 7) {
+	} else if (specie == "Pooka") {
 		spcImg.innerHTML = `
         <img src="assets/img/species/pooka.png" />`;
-	} else if (specie == 8) {
+	} else if (specie == "Spriggan") {
 		spcImg.innerHTML = `
         <img src="assets/img/species/spriggan.png" />`;
-	} else if (specie == 9) {
+	} else if (specie == "Leprechaun") {
 		spcImg.innerHTML = `
         <img src="assets/img/species/leprechaun.png" />`;
 	} else {
@@ -304,7 +304,7 @@ function cadastrar() {
 
 					setTimeout(() => {
 						window.location = "profile.html";
-					}, "2500");
+					}, "1000");
 				} else {
 					throw "Houve um erro ao tentar criar o personagem!";
 				}
