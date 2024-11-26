@@ -17,6 +17,8 @@ html {
 
 body {
     background-image: url("../img/background.jpg");
+    background-size: cover;
+    /* background-repeat: no-repeat; */
     /* background-color: black; */
     margin: 0;
     padding: 0;

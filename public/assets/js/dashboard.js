@@ -1,22 +1,59 @@
 function onload() {
-	var Sylph = "rgba(156, 204, 108, 0.6)";
-	var Salamander = "rgba(192, 40, 64, 0.6)";
-	var Gnome = "rgba(118, 92, 70, 0.6)";
-	var Undine = "rgba(108, 208, 224, 0.6)";
-	var CaitSith = "rgba(200, 163, 64, 0.6)";
-	var Imp = "rgba(118, 103, 135, 0.6)";
-	var Pooka = "rgba(174, 222, 108, 0.6)";
-	var Spriggan = "rgba(44, 44, 44, 0.6)";
-	var Leprechaun = "rgba(164, 162, 171, 0.6)";
+	var qtdPolearm;
+	var qtdBow;
+	var qtdSword;
+	var qtdWand;
+	var qtdDagger;
+	var qtdShield;
 
-	var qtdpolearm = (Math.random() * 10).toFixed(0);
-	var qtdbow = (Math.random() * 10).toFixed(0);
-	var qtdsword = (Math.random() * 10).toFixed(0);
-	var qtdwand = (Math.random() * 10).toFixed(0);
-	var qtddagger = (Math.random() * 10).toFixed(0);
-	var qtdshield = (Math.random() * 10).toFixed(0);
+	var qtdSylph;
+	var qtdSalamander;
+	var qtdGnome;
+	var qtdUndine;
+	var qtdCaitSith;
+	var qtdImp;
+	var qtdPooka;
+	var qtdSpriggan;
+	var qtdLeprechaun;
 
-	var weapons = [qtdpolearm, qtdbow, qtdsword, qtdwand, qtddagger, qtdshield];
+	var SylphColor = "rgba(156, 204, 108, 0.8)";
+	var SalamanderColor = "rgba(192, 40, 64, 0.8)";
+	var GnomeColor = "rgba(118, 92, 70, 0.8)";
+	var UndineColor = "rgba(108, 208, 224, 0.8)";
+	var CaitSithColor = "rgba(200, 163, 64, 0.8)";
+	var ImpColor = "rgba(118, 103, 135, 0.8)";
+	var PookaColor = "rgba(174, 222, 108, 0.8)";
+	var SprigganColor = "rgba(44, 44, 44, 0.8)";
+	var LeprechaunColor = "rgba(164, 162, 171, 0.8)";
+
+	var population = document.getElementById("speciesChart").getContext("2d");
+	var speciesPop = [qtdSylph, qtdSalamander, qtdGnome, qtdUndine, qtdCaitSith, qtdImp, qtdPooka, qtdSpriggan, qtdLeprechaun];
+
+	spcChart = new Chart(population, {
+		type: "pie",
+		data: {
+			labels: ["Sylph", "Salamander", "Gnome", "Undine", "CaitSith", "Imp", "Pooka", "Spriggan", "Leprechaun"],
+			datasets: [
+				{
+					label: "",
+					data: speciesPop,
+					backgroundColor: [SylphColor, SalamanderColor, GnomeColor, UndineColor, CaitSithColor, ImpColor, PookaColor, SprigganColor, LeprechaunColor],
+					borderWidth: 0,
+				},
+			],
+		},
+		options: {
+			responsive: true,
+			plugins: {
+				legend: {
+					display: true,
+					position: "right",
+				},
+			},
+		},
+	});
+
+	var weapons = [qtdPolearm, qtdBow, qtdSword, qtdWand, qtdDagger, qtdShield];
 
 	var popularity = document.getElementById("popularityChart").getContext("2d");
 
@@ -30,7 +67,7 @@ function onload() {
 					label: "",
 					data: weapons,
 					fill: true,
-					backgroundColor: [Sylph, Salamander, Gnome, Undine, CaitSith, Imp, Pooka, Spriggan, Leprechaun],
+					backgroundColor: [SylphColor, SalamanderColor, GnomeColor, UndineColor, CaitSithColor, ImpColor, PookaColor, SprigganColor, LeprechaunColor],
 					borderColor: "rgba(255, 255, 255, 0.8)",
 					borderRadius: 10,
 				},
@@ -65,41 +102,66 @@ function onload() {
 			},
 		},
 	});
-
-	var qtdSylph = (Math.random() * 10).toFixed(0);
-	var qtdSalamander = (Math.random() * 10).toFixed(0);
-	var qtdGnome = (Math.random() * 10).toFixed(0);
-	var qtdUndine = (Math.random() * 10).toFixed(0);
-	var qtdCaitSith = (Math.random() * 10).toFixed(0);
-	var qtdImp = (Math.random() * 10).toFixed(0);
-	var qtdPooka = (Math.random() * 10).toFixed(0);
-	var qtdSpriggan = (Math.random() * 10).toFixed(0);
-	var qtdLeprechaun = (Math.random() * 10).toFixed(0);
-
-	var species = [qtdSylph, qtdSalamander, qtdGnome, qtdUndine, qtdCaitSith, qtdImp, qtdPooka, qtdSpriggan, qtdLeprechaun];
-	var population = document.getElementById("speciesChart").getContext("2d");
-
-	spcChart = new Chart(population, {
-		type: "pie",
-		data: {
-			labels: ["Sylph", "Salamander", "Gnome", "Undine", "CaitSith", "Imp", "Pooka", "Spriggan", "Leprechaun"],
-			datasets: [
-				{
-					label: "",
-					data: species,
-					backgroundColor: [Sylph, Salamander, Gnome, Undine, CaitSith, Imp, Pooka, Spriggan, Leprechaun],
-					borderWidth: 0,
-				},
-			],
+	fetch("/dashboard/weapons", {
+		method: "GET",
+		headers: {
+			"Content-Type": "application/json",
 		},
-		options: {
-			responsive: true,
-			plugins: {
-				legend: {
-					display: true,
-					position: "right",
-				},
-			},
+	})
+		.then(function (resposta) {
+			console.log("resposta: ", resposta);
+
+			if (resposta.ok) {
+				resposta.json().then((json) => {
+					console.log(json);
+					qtdSword = json.sword || 0;
+					qtdWand = json.wand || 0;
+					qtdBow = json.bow || 0;
+					qtdDagger = json.dagger || 0;
+					qtdPolearm = json.polearm || 0;
+					qtdShield = json.shield || 0;
+
+					popChart.data.datasets[0].data = [qtdPolearm, qtdBow, qtdSword, qtdWand, qtdDagger, qtdShield];
+					popChart.update();
+				});
+			} else {
+				throw "Houve um erro ao tentar carregar a dashboard!";
+			}
+		})
+		.catch(function (resposta) {
+			console.log(`#ERRO: ${resposta}`);
+		});
+
+	fetch("/dashboard/species", {
+		method: "GET",
+		headers: {
+			"Content-Type": "application/json",
 		},
-	});
+	})
+		.then(function (resposta) {
+			console.log("resposta: ", resposta);
+
+			if (resposta.ok) {
+				resposta.json().then((json) => {
+					console.log(json);
+					qtdSylph = json.Sylph || 0;
+					qtdSalamander = json.Salamander || 0;
+					qtdGnome = json.Gnome || 0;
+					qtdUndine = json.Undine || 0;
+					qtdCaitSith = json.CaitSith || 0;
+					qtdImp = json.Imp || 0;
+					qtdPooka = json.Pooka || 0;
+					qtdSpriggan = json.Spriggan || 0;
+					qtdLeprechaun = json.Leprechaun || 0;
+
+					spcChart.data.datasets[0].data = [qtdSylph, qtdSalamander, qtdGnome, qtdUndine, qtdCaitSith, qtdImp, qtdPooka, qtdSpriggan, qtdLeprechaun];
+					spcChart.update();
+				});
+			} else {
+				throw "Houve um erro ao tentar carregar a dashboard!";
+			}
+		})
+		.catch(function (resposta) {
+			console.log(`#ERRO: ${resposta}`);
+		});
 }
