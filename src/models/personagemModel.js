@@ -2,7 +2,7 @@ var database = require("../database/config");
 
 function exibir(idusuario) {
 	var instrucaoSql = `
-    SELECT * FROM personagem inner join equipamento WHERE idusuario = ${idusuario}`;
+    SELECT * FROM personagem inner join equipamento ON equipamento.idpersonagem = personagem.idpersonagem WHERE idusuario = ${idusuario}`;
 	console.log("Executando a instrução SQL: \n" + instrucaoSql);
 	return database.executar(instrucaoSql);
 }
