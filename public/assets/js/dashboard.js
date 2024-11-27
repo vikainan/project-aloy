@@ -148,7 +148,7 @@ function onload() {
 					qtdSalamander = json.Salamander || 0;
 					qtdGnome = json.Gnome || 0;
 					qtdUndine = json.Undine || 0;
-					qtdCaitSith = json.CaitSith || 0;
+					qtdCaitSith = json.Cait_Sith || 0;
 					qtdImp = json.Imp || 0;
 					qtdPooka = json.Pooka || 0;
 					qtdSpriggan = json.Spriggan || 0;
