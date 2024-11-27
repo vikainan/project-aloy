@@ -48,14 +48,14 @@ function cadastrar() {
 			}
 		}
 		if (hasSymbol || username.length < 6) {
-			msg += `Nome de usuário inválido. Verifique os caracteres utilizados.<br>`;
+			msg += `Nome de usuário inválido. Verifique os caracteres utilizados. No mínimo 6 caracteres, sem símbolos.<br>`;
 			isUserValid = false;
 			painel.innerHTML = msg;
 		} else {
 			isUserValid = true;
 		}
 	} else {
-		msg += `Nome de usuário inválido. Verifique os caracteres utilizados.<br>`;
+		msg += `Nome de usuário inválido. Verifique os caracteres utilizados. No mínimo 6 caracteres, sem símbolos.<br>`;
 		isUserValid = false;
 		painel.innerHTML = msg;
 	}
@@ -122,7 +122,7 @@ function cadastrar() {
 
 					setTimeout(() => {
 						signin();
-					}, "5000");
+					}, "500");
 				} else {
 					throw "Houve um erro ao tentar realizar o cadastro!";
 				}
@@ -163,13 +163,12 @@ function acessar() {
 
 					sessionStorage.setItem("auth", "true");
 					painel.innerHTML = `
-					<span style="color: rgba(0, 175, 0, 0.75)">
 					Login realizado com sucesso!
-					Redirecionando para criação de personagem</span>`;
+					Redirecionando para criação de personagem`;
 
 					setTimeout(() => {
 						window.location = "creator.html";
-					}, "2500");
+					}, "500");
 				} else {
 					throw "Houve um erro ao tentar realizar o login!";
 				}
