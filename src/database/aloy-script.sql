@@ -79,7 +79,3 @@ INSERT INTO equipamento (idpersonagem, toparmor, middlearmor, lowerarmor, bottom
 ('12', 'top1', 'middle2', 'lower3', 'bottom1', 'dagger'),
 ('13', 'top1', 'middle2', 'lower3', 'bottom1', 'shield')
 ;
-
-select * from personagem;
-
-SELECT * FROM personagem inner join equipamento on equipamento.idpersonagem = personagem.idpersonagem where  idusuario = 2;
